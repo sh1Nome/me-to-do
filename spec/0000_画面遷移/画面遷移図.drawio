@@ -1,132 +1,137 @@
-<mxfile host="app.diagrams.net" modified="2024-03-22T04:03:49.878Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="O0qN_4Q6ousnocZo-k1_" version="23.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-22T11:17:17.689Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="rRtpoAi9om0Czy6JOYq1" version="24.0.7" type="github">
   <diagram name="ページ1" id="G6aMOeZm90I2qe-2uqz8">
     <mxGraphModel dx="811" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="JeklUr3dZW-zxgERdQmK-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-1" target="JeklUr3dZW-zxgERdQmK-2">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="JeklUr3dZW-zxgERdQmK-1" target="JeklUr3dZW-zxgERdQmK-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-1" value="ログイン画面" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="WyoM2Pv21MSdwMsaFFap-1" value="ログインボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-4">
+          <mxGeometry x="-0.36" y="1" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JeklUr3dZW-zxgERdQmK-1" value="ログイン画面" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="50" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-2" target="JeklUr3dZW-zxgERdQmK-3">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="JeklUr3dZW-zxgERdQmK-2" target="JeklUr3dZW-zxgERdQmK-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-11" value="追加ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-5">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-11" value="追加ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-5" vertex="1" connectable="0">
           <mxGeometry x="-0.1889" y="1" relative="1" as="geometry">
             <mxPoint x="-2" y="16" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-2" target="JeklUr3dZW-zxgERdQmK-12">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="JeklUr3dZW-zxgERdQmK-2" target="JeklUr3dZW-zxgERdQmK-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="270" y="270" />
-              <mxPoint x="270" y="270" />
+              <mxPoint x="350" y="270" />
+              <mxPoint x="350" y="270" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-17" value="リスト表示ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-13">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-17" value="リスト表示ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-13" vertex="1" connectable="0">
           <mxGeometry x="-0.375" y="-2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-2" value="ToDoカンバン画面" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="170" width="120" height="60" as="geometry" />
+        <mxCell id="JeklUr3dZW-zxgERdQmK-2" value="ToDoカンバン画面" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-3">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="JeklUr3dZW-zxgERdQmK-3" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="340" y="170" as="targetPoint" />
+            <mxPoint x="420" y="170" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="530" y="150" />
-              <mxPoint x="340" y="150" />
-              <mxPoint x="340" y="170" />
+              <mxPoint x="610" y="150" />
+              <mxPoint x="420" y="150" />
+              <mxPoint x="420" y="170" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-7" value="追加・戻るボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-6">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-7" value="追加・戻るボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-6" vertex="1" connectable="0">
           <mxGeometry x="0.0583" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-3" value="タスク追加画面" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="470" y="220" width="120" height="60" as="geometry" />
+        <mxCell id="JeklUr3dZW-zxgERdQmK-3" value="タスク追加画面" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="220" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-8" target="JeklUr3dZW-zxgERdQmK-1">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JeklUr3dZW-zxgERdQmK-8" target="JeklUr3dZW-zxgERdQmK-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-10" value="ログアウトボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-9">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-10" value="ログアウトボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-9" vertex="1" connectable="0">
           <mxGeometry x="-0.2667" y="-3" relative="1" as="geometry">
             <mxPoint x="3" y="8" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-8" value="すべての画面" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-8" value="すべての画面" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="50" y="50" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-12">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="JeklUr3dZW-zxgERdQmK-12" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="330" y="230" as="targetPoint" />
+            <mxPoint x="410" y="230" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="330" y="230" />
+              <mxPoint x="410" y="230" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-16" value="カンバン表示ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-14">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-16" value="カンバン表示ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-14" vertex="1" connectable="0">
           <mxGeometry x="-0.125" y="3" relative="1" as="geometry">
             <mxPoint x="13" y="15" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-12" target="JeklUr3dZW-zxgERdQmK-3">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="JeklUr3dZW-zxgERdQmK-12" target="JeklUr3dZW-zxgERdQmK-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-19" value="追加ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-18">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-19" value="追加ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-18" vertex="1" connectable="0">
           <mxGeometry x="-0.0703" y="-3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-12" value="ToDoリスト画面" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="310" width="120" height="60" as="geometry" />
+        <mxCell id="JeklUr3dZW-zxgERdQmK-12" value="ToDoリスト画面" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="310" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.858;entryY=1.05;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-3" target="JeklUr3dZW-zxgERdQmK-12">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.858;entryY=1.05;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="JeklUr3dZW-zxgERdQmK-3" target="JeklUr3dZW-zxgERdQmK-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="530" y="390" />
-              <mxPoint x="343" y="390" />
+              <mxPoint x="610" y="390" />
+              <mxPoint x="423" y="390" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-21" value="追加・戻るボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-20">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-21" value="追加・戻るボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-20" vertex="1" connectable="0">
           <mxGeometry x="0.3121" y="-3" relative="1" as="geometry">
             <mxPoint y="3" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="JeklUr3dZW-zxgERdQmK-12">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="JeklUr3dZW-zxgERdQmK-12" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="310" y="370" as="sourcePoint" />
+            <mxPoint x="390" y="370" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="310" y="390" />
-              <mxPoint x="210" y="390" />
-              <mxPoint x="210" y="340" />
+              <mxPoint x="390" y="390" />
+              <mxPoint x="290" y="390" />
+              <mxPoint x="290" y="340" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-23" value="削除ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-22">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-23" value="削除ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-22" vertex="1" connectable="0">
           <mxGeometry x="0.3336" y="-1" relative="1" as="geometry">
             <mxPoint x="39" y="13" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.408;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="JeklUr3dZW-zxgERdQmK-2" target="JeklUr3dZW-zxgERdQmK-2">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.408;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="JeklUr3dZW-zxgERdQmK-2" target="JeklUr3dZW-zxgERdQmK-2" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="210" y="190" as="targetPoint" />
+            <mxPoint x="290" y="190" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="300" y="170" />
+              <mxPoint x="380" y="170" />
+              <mxPoint x="380" y="140" />
               <mxPoint x="300" y="140" />
-              <mxPoint x="220" y="140" />
-              <mxPoint x="220" y="185" />
+              <mxPoint x="300" y="185" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JeklUr3dZW-zxgERdQmK-26" value="削除ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="JeklUr3dZW-zxgERdQmK-24">
+        <mxCell id="JeklUr3dZW-zxgERdQmK-26" value="削除ボタン" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JeklUr3dZW-zxgERdQmK-24" vertex="1" connectable="0">
           <mxGeometry x="-0.1395" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
