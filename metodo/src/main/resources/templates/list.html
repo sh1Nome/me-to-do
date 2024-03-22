@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,5 +7,17 @@
 </head>
 <body>
     <h1>リスト画面</h1>
+    <form th:action="@{/list}" method="post">
+        <input type="submit" value="削除">
+    </form>
+    <form th:action="@{/kanban}" method="post">
+        <input type="submit" value="カンバンボード表示">
+    </form>
+    <form th:action="@{/addtask}" method="post">
+        <input type="submit" value="タスク追加">
+    </form>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="ログアウト">
+    </form>
 </body>
 </html>

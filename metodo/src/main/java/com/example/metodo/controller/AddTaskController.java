@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class KanbanController {
+public class AddTaskController {
 
-    @PostMapping("kanban")
-    public String showKanban() {
-        return "kanban";
+    @PostMapping("addtask")
+    public String showAddTask() {
+        return "addtask";
     }
 
 }

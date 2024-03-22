@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>カンバンボード画面</title>
+    <title>タスク追加画面</title>
 </head>
 <body>
-    <h1>カンバンボード画面</h1>
+    <h1>タスク追加画面</h1>
     <form th:action="@{/kanban}" method="post">
-        <input type="submit" value="削除">
-    </form>
-    <form th:action="@{/list}" method="post">
-        <input type="submit" value="リスト表示">
-    </form>
-    <form th:action="@{/addtask}" method="post">
-        <input type="submit" value="タスク追加">
+        <input type="submit" value="追加">
+        <input type="submit" value="戻る">
     </form>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="ログアウト">
