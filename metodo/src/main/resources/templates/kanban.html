@@ -11,7 +11,7 @@
         <input type="submit" value="削除">
     </form>
     <form th:action="@{/todo}" method="post" th:object="${userSettingForm}">
-        <input type="text" th:field="*{changeView}">
+        <input type="hidden" th:field="*{changeView}">
         <input type="submit" value="表示切り替え">
     </form>
     <form th:action="@{/addtask}" method="post">

@@ -23,7 +23,7 @@ public class ChangeUserSettingImpl implements ChangeUserSetting {
         } else {
             kanbanFlg = "Y";
         }
-        UserSetting userSetting = new UserSetting(id, 1, kanbanFlg);
+        UserSetting userSetting = new UserSetting(id, 0, kanbanFlg);
         repository.save(userSetting);
     }
     
