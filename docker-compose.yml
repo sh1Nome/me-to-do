@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  jdk:
+    build: .
+    container_name: 'jdk'
+    init: true
+    volumes:
+      - './work:/home/work'
+  db:
+    image: 'postgres:16'
+    container_name: 'db'
+    environment:
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=user'
+      - 'POSTGRES_DB=db'
+  adminer:
+    image: 'adminer'
+    container_name: 'adminer'
+    ports:
+      - '8080:8080'

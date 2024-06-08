@@ -1,0 +1,26 @@
+{
+    "name": "SpringBoot Dev Templete",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "jdk",
+    "workspaceFolder": "/home/work",
+    "shutdownAction": "none",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.mouseWheelScrollSensitivity": 0.3,
+                "java.jdt.ls.java.home": "/opt/java/openjdk",
+                "editor.renderWhitespace": "all",
+                "emmet.variables": {
+                    "lang": "ja"
+                },
+                "redhat.telemetry.enabled": false
+            },
+            "extensions": [
+                "vmware.vscode-boot-dev-pack",
+                "vscjava.vscode-gradle",
+                "vscjava.vscode-java-pack"
+            ]
+        }
+    }
+}
