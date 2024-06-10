@@ -6,6 +6,8 @@ services:
     init: true
     volumes:
       - './work:/home/work'
+    ports:
+      - '80:8080'
   db:
     image: 'postgres:16'
     container_name: 'db'
