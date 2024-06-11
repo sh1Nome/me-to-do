@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title th:text="#{label.title.login}"></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <div th:if="${param.error}"><span th:text="#{failure.login}"></span></div>
-                <div th:if="${param.logout}"><span th:text="#{success.logout}"></span></div>
+                <div id="message">
+                    <div th:if="${param.logout}" class="columns" :class="{ 'is-hidden': isHiddenLogout }">
+                        <div class="notification is-info column is-half is-offset-one-quarter">
+                            <button class="delete" @click="hiddenMessageLogout"></button>
+                            <div th:text="#{success.logout}"></div>
+                        </div>
+                    </div>
+                    <div th:if="${param.error}" class="columns" :class="{ 'is-hidden': isHiddenError }">
+                        <div class="notification is-danger column is-half is-offset-one-quarter">
+                            <button class="delete" @click="hiddenMessageError"></button>
+                            <div th:text="#{failure.login}"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="columns">
                     <div class="column is-half is-offset-one-quarter">
                         <form th:action="@{/login}" method="post" class="box">
@@ -44,5 +57,24 @@
             </div>
         </div>
     </section>
+    <script>
+    const { createApp } = Vue
+    createApp({
+        data() {
+            return {
+                isHiddenLogout: false,
+                isHiddenError: false
+            }
+        },
+        methods:  {
+            hiddenMessageLogout() {
+                this.isHiddenLogout = true;
+            },
+            hiddenMessageError() {
+                this.isHiddenError = true;
+            }
+        }
+    }).mount('#message');
+    </script>
 </body>
 </html>
