@@ -5,52 +5,48 @@
 </head>
 <body>
     <section>
-        <div class="hero is-fullheight">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div id="message">
-                        <div th:if="${param.logout}" class="columns" :class="{ 'is-hidden': isHiddenLogout }">
-                            <div class="notification is-info column is-half is-offset-one-quarter">
-                                <button class="delete" @click="hiddenMessageLogout"></button>
-                                <div th:text="#{success.logout}"></div>
-                            </div>
-                        </div>
-                        <div th:if="${param.error}" class="columns" :class="{ 'is-hidden': isHiddenError }">
-                            <div class="notification is-danger column is-half is-offset-one-quarter">
-                                <button class="delete" @click="hiddenMessageError"></button>
-                                <div th:text="#{failure.login}"></div>
-                            </div>
-                        </div>
+        <div class="container">
+            <div id="message" class="has-text-centered">
+                <div th:if="${param.logout}" class="columns" :class="{ 'is-hidden': isHiddenLogout }">
+                    <div class="notification is-info column is-half is-offset-one-quarter">
+                        <button class="delete" @click="hiddenMessageLogout"></button>
+                        <div th:text="#{success.logout}"></div>
                     </div>
-                    <div class="columns">
-                        <div class="column is-half is-offset-one-quarter">
-                            <form th:action="@{/login}" method="post" class="box">
-                                <div class="field">
-                                    <label for="username" th:text="#{label.username}" class="label"></label>
-                                    <div class="control">
-                                        <input type="text" id="username" name="username" class="input" />
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label for="password" th:text="#{label.password}" class="label"></label>
-                                    <div class="control">
-                                        <input type="password" id="password" name="password" class="input" />
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <div class="fixed-grid has-4-cols">
-                                            <div class="grid">
-                                                <div class="cell is-col-start-4">
-                                                    <button type="submit" class="button is-primary"><span th:text="#{button.login}"></span></button>
-                                                </div>
-                                            </div>
+                </div>
+                <div th:if="${param.error}" class="columns" :class="{ 'is-hidden': isHiddenError }">
+                    <div class="notification is-danger column is-half is-offset-one-quarter">
+                        <button class="delete" @click="hiddenMessageError"></button>
+                        <div th:text="#{failure.login}"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <form th:action="@{/login}" method="post" class="box">
+                        <div class="field">
+                            <label for="username" th:text="#{label.username}" class="label"></label>
+                            <div class="control">
+                                <input type="text" id="username" name="username" class="input" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="password" th:text="#{label.password}" class="label"></label>
+                            <div class="control">
+                                <input type="password" id="password" name="password" class="input" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <div class="fixed-grid has-4-cols">
+                                    <div class="grid">
+                                        <div class="cell is-col-start-4 has-text-right">
+                                            <button type="submit" class="button is-primary"><span th:text="#{button.login}"></span></button>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

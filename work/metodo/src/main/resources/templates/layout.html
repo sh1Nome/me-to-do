@@ -8,6 +8,26 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div th:replace="${content}"></div>
+    <div class="block">
+        <header>
+            <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                MeToDo
+            </div>
+            </nav>
+        </header>
+    </div>
+    <div class="block">
+        <div th:replace="${content}"></div>
+    </div>
+    <div class="block">
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <span th:text="#{label.footer.bysh1Nome}"></span><br>
+                <a href="https://x.com/sh1_No_me" target="_blank"><span th:text="#{label.footer.x}"></span></a><br>
+                <a href="https://github.com/sh1Nome/me-to-do" target="_blank"><span th:text="#{label.footer.github}"></span></a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
