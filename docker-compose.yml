@@ -15,6 +15,9 @@ services:
       - 'POSTGRES_PASSWORD=password'
       - 'POSTGRES_USER=user'
       - 'POSTGRES_DB=db'
+      - 'TZ=Asia/Tokyo'
+    volumes:
+      - './data:/var/lib/postgresql/data'
   adminer:
     image: 'adminer'
     container_name: 'adminer'
