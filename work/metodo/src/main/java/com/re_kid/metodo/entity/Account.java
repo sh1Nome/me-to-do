@@ -15,10 +15,10 @@ public class Account {
 
     private String password;
 
-    private String isEnabled;
+    private Boolean isEnabled;
 
     private Date createDate;
 
-    private Date updateData;
+    private Date updateDate;
 
 }
