@@ -1,9 +1,12 @@
 package com.re_kid.metodo.entity;
 
 import java.util.Date;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
@@ -20,5 +23,8 @@ public class Account {
     private Date createDate;
 
     private Date updateDate;
+
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+    private List<Authorities> authorities;
 
 }

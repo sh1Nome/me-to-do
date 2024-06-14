@@ -15,5 +15,5 @@ CREATE TABLE authorities (
 	PRIMARY KEY(authorities_id)
 );
 
-INSERT INTO account (account_id, password, is_enabled, create_date, update_date) VALUES ('administrator', 'password', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO account (account_id, password, is_enabled, create_date, update_date) VALUES ('administrator', '$2a$08$83PnjgSZp6a2kVmZm7RCSeumfZoQhVODojQQgz348xpFpJAFRm8jW', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO authorities (authorities_id, account_id, authority, update_date) VALUES ('AT19700101000000000', 'administrator', 'admin', CURRENT_TIMESTAMP);
