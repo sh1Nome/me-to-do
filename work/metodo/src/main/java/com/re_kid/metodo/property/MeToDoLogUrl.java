@@ -6,10 +6,12 @@ import org.springframework.stereotype.Component;
 import lombok.Data;
 
 @Component
-@ConfigurationProperties(prefix = "authority.spring.security")
+@ConfigurationProperties(prefix = "metodo.log.url")
 @Data
-public class AuthoritySpringSecurityProperties {
+public class MeToDoLogUrl {
 
-    private String admin;
+    private String app;
+
+    private String adminer;
 
 }

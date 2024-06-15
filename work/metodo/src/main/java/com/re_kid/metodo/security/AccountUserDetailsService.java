@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.re_kid.metodo.entity.Account;
-import com.re_kid.metodo.property.AuthorityDbProperties;
-import com.re_kid.metodo.property.AuthoritySpringSecurityProperties;
 import com.re_kid.metodo.repository.AccountRepository;
 
 @Service
@@ -21,15 +19,8 @@ public class AccountUserDetailsService implements UserDetailsService {
 
     private final AccountRepository accountRepository;
 
-    private final AuthorityDbProperties authorityDbProperties;
-
-    private final AuthoritySpringSecurityProperties authoritySpringSecurityProperties;
-
-    public AccountUserDetailsService(AccountRepository accountRepository, AuthorityDbProperties authorityDbProperties,
-            AuthoritySpringSecurityProperties authoritySpringSecurityProperties) {
+    public AccountUserDetailsService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
-        this.authorityDbProperties = authorityDbProperties;
-        this.authoritySpringSecurityProperties = authoritySpringSecurityProperties;
     }
 
     @Override
@@ -42,11 +33,7 @@ public class AccountUserDetailsService implements UserDetailsService {
 
     private Collection<GrantedAuthority> getAuthorities(Account account) {
         return AuthorityUtils.createAuthorityList(account.getAuthorities().stream()
-                .map(authorityes -> authorityes.getAuthority())
-                .map(auth -> authorityDbProperties.getAdmin().equals(auth)
-                        ? authoritySpringSecurityProperties.getAdmin()
-                        : auth)
-                .distinct().collect(Collectors.toList()));
+                .map(authorityes -> authorityes.getAuthority()).collect(Collectors.toList()));
     }
 
 }
