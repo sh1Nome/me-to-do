@@ -14,7 +14,8 @@
                 "emmet.variables": {
                     "lang": "ja"
                 },
-                "redhat.telemetry.enabled": false
+                "redhat.telemetry.enabled": false,
+                "editor.formatOnSave": true
             },
             "extensions": [
                 "vmware.vscode-boot-dev-pack",
