@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title, content)">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
     <div class="block">
         <header>
             <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                MeToDo
-            </div>
+                <div class="navbar-brand">
+                    MeToDo
+                </div>
             </nav>
         </header>
     </div>
@@ -24,10 +26,15 @@
         <footer class="footer">
             <div class="content has-text-centered">
                 <span th:text="#{label.footer.bysh1Nome}"></span><br>
-                <a href="https://x.com/sh1_No_me" target="_blank"><span th:text="#{label.footer.x}"></span></a><br>
-                <a href="https://github.com/sh1Nome/me-to-do" target="_blank"><span th:text="#{label.footer.github}"></span></a>
+                <a href="https://x.com/sh1_No_me" target="_blank">
+                    <img th:src="@{/img/x/logo.svg}" />
+                </a><br>
+                <a href="https://github.com/sh1Nome/me-to-do" target="_blank">
+                    <img th:src="@{/img/github/github-mark.svg}" />
+                </a>
             </div>
         </footer>
     </div>
 </body>
+
 </html>
