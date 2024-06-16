@@ -1,13 +1,5 @@
 version: '3.9'
 services:
-  jdk:
-    build: .
-    container_name: 'jdk'
-    init: true
-    volumes:
-      - './work:/home/work'
-    ports:
-      - '80:8080'
   db:
     image: 'postgres:16'
     container_name: 'db'
@@ -18,8 +10,10 @@ services:
       - 'TZ=Asia/Tokyo'
     volumes:
       - './data:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
   adminer:
     image: 'adminer'
     container_name: 'adminer'
     ports:
-      - '8080:8080'
+      - '49152:8080'
