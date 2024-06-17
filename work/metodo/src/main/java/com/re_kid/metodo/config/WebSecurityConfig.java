@@ -16,6 +16,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.formLogin(login -> login
                 .loginPage("/login")
+                .failureUrl("/error")
                 .permitAll())
                 .authorizeHttpRequests(authz -> authz
                         .anyRequest()
