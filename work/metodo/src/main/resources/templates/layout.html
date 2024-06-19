@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:replace="${title}"></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" th:href="@{/css/metodo.css}">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
@@ -25,13 +26,18 @@
     <div class="block">
         <footer class="footer">
             <div class="content has-text-centered">
-                <span th:text="#{label.footer.bysh1Nome}"></span><br>
-                <a href="https://x.com/sh1_No_me" target="_blank">
-                    <img th:src="@{/img/x/logo.svg}" />
-                </a><br>
-                <a href="https://github.com/sh1Nome/me-to-do" target="_blank">
-                    <img th:src="@{/img/github/github-mark.svg}" />
-                </a>
+                <div class="block">
+                    <span th:text="#{label.footer.bysh1Nome}"></span>
+                </div>
+                <div class="block">
+                    <a href="https://x.com/sh1_No_me" target="_blank">
+                        <img th:src="@{/img/x/logo-black.png}" class="me-icon-20px" />
+                    </a>
+                    &nbsp;
+                    <a href="https://github.com/sh1Nome/me-to-do" target="_blank">
+                        <img th:src="@{/img/github/github-mark.svg}" class="me-icon-20px" />
+                    </a>
+                </div>
             </div>
         </footer>
     </div>

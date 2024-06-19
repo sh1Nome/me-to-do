@@ -18,6 +18,8 @@ public class WebSecurityConfig {
                 .loginPage("/login")
                 .permitAll())
                 .authorizeHttpRequests(authz -> authz
+                        .requestMatchers("/img/**", "/css/**")
+                        .permitAll()
                         .anyRequest()
                         .authenticated())
                 .logout(logout -> logout
