@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+
 <head>
     <title th:text="#{label.title.top}"></title>
 </head>
+
 <body>
     <section>
         <div class="section">
@@ -15,9 +17,7 @@
                 </p>
             </div>
         </div>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" />
-        </form>
     </section>
 </body>
+
 </html>
