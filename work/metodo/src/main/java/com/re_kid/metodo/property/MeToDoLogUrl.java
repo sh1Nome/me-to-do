@@ -8,7 +8,7 @@ import lombok.Data;
 @Component
 @ConfigurationProperties(prefix = "metodo.log.url")
 @Data
-public class MeToDoLogUrl {
+public class MetodoLogUrl {
 
     private String app;
 
