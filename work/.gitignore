@@ -1,5 +1,9 @@
 .cache
 .dotnet
 .gradle
+.sts4
+.vscode
 .vscode-server
 .dotnet
+.bash_history
+logs

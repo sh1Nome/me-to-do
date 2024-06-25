@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    th:fragment="layout (title, content)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}"></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" th:href="@{/css/metodo.css}">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <script>
+        const { createApp } = Vue
+    </script>
+    <div class="block">
+        <header id="header">
+            <nav class="navbar is-primary">
+                <div class="navbar-brand">
+                    <div class="navbar-item">
+                        <h3 class="title is-3">
+                            <a th:href="@{/}">MeToDo</a>
+                        </h3>
+                    </div>
+                    <div class="navbar-burger" :class="{ 'is-active' : isActive }" @click="burgerToggle"
+                        sec:authorize="isAuthenticated()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="navbar-menu" :class="{ 'is-active' : isActive }" sec:authorize="isAuthenticated()">
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <form th:action="@{/logout}" method="post">
+                                <button type="submit" class="button is-text" th:text="#{button.logout}"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    </nav>
+    </header>
+    <script>
+        createApp({
+            data() {
+                return {
+                    isActive: false
+                }
+            },
+            methods: {
+                burgerToggle() {
+                    this.isActive = !this.isActive;
+                }
+            }
+        }).mount('#header');
+    </script>
+    </div>
+    <div class="block">
+        <div th:replace="${content}"></div>
+    </div>
+    <div class="block">
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <div class="block">
+                    <span th:text="#{label.footer.bysh1Nome}"></span>
+                </div>
+                <div class="block">
+                    <a href="https://x.com/sh1_No_me" target="_blank">
+                        <img th:src="@{/img/x/logo-black.png}" class="me-icon-20px" />
+                    </a>
+                    &nbsp;
+                    <a href="https://github.com/sh1Nome/me-to-do" target="_blank">
+                        <img th:src="@{/img/github/github-mark.svg}" class="me-icon-20px" />
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
