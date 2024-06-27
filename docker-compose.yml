@@ -1,5 +1,13 @@
 version: '3.9'
 services:
+  jdk:
+    build: .
+    container_name: 'jdk'
+    init: true
+    volumes:
+      - './work:/home/work'
+    ports:
+      - '8080:8080'
   db:
     image: 'postgres:16'
     container_name: 'db'
