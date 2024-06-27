@@ -2,7 +2,7 @@
     "name": "SpringBoot Dev Templete",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "jdk",
-    "workspaceFolder": "/home/work",
+    "workspaceFolder": "/home/work/metodo",
     "shutdownAction": "none",
     "customizations": {
         "vscode": {
