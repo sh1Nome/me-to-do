@@ -7,36 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:replace="${title}"></title>
     <link rel="stylesheet" th:href="@{/css/metodo.css}">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit-icons.min.js"></script>
 </head>
 
 <body>
-    <script>
-        const { createApp } = Vue
-    </script>
     <header>
-        <div>
-            <h3>
-                <a th:href="@{/}">MeToDo</a>
-            </h3>
-        </div>
-        <div sec:authorize="isAuthenticated()">
-            <form th:action="@{/logout}" method="post">
-                <button type="submit" class="button is-text" th:text="#{button.logout}"></button>
-            </form>
-        </div>
+        <nav class="uk-navbar-container">
+            <div class="uk-container uk-container-expand">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-item uk-logo" th:text="#{label.header.logo}" th:href="@{/}"></a>
+                        <a class="uk-navbar-item uk-link-reset" href="https://github.com/sh1Nome/me-to-do"
+                            uk-icon="icon: github" target="_blank"></a>
+                        <a class="uk-navbar-item uk-link-reset" href="https://x.com/sh1_No_me" uk-icon="icon: x"
+                            target="_blank"></a>
+                    </div>
+                    <div class="uk-navbar-right" sec:authorize="isAuthenticated()">
+                        <div class="uk-navbar-item">
+                            <form th:action="@{/logout}" method="post">
+                                <button type="submit" class="uk-button uk-button-default">
+                                    <span uk-icon="icon: sign-out"></span>
+                                    <span th:text="#{button.logout}"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
     <div th:replace="${content}"></div>
-    <footer>
-        <span th:text="#{label.footer.bysh1Nome}"></span>
-        <a href="https://x.com/sh1_No_me" target="_blank">
-            <img th:src="@{/img/x/logo-black.png}" class="me-icon-20px" />
-        </a>
-        &nbsp;
-        <a href="https://github.com/sh1Nome/me-to-do" target="_blank">
-            <img th:src="@{/img/github/github-mark.svg}" class="me-icon-20px" />
-        </a>
-    </footer>
 </body>
 
 </html>
