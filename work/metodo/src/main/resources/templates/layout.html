@@ -21,19 +21,47 @@
                 <div uk-navbar>
                     <div class="uk-navbar-left">
                         <a class="uk-navbar-item uk-logo" th:text="#{label.header.logo}" th:href="@{/}"></a>
+                    </div>
+                    <div class="uk-navbar-right uk-visible@m">
                         <a class="uk-navbar-item uk-link-reset" href="https://github.com/sh1Nome/me-to-do"
                             uk-icon="icon: github" target="_blank"></a>
                         <a class="uk-navbar-item uk-link-reset" href="https://x.com/sh1_No_me" uk-icon="icon: x"
                             target="_blank"></a>
-                    </div>
-                    <div class="uk-navbar-right" sec:authorize="isAuthenticated()">
-                        <div class="uk-navbar-item">
+                        <div class="uk-navbar-item" sec:authorize="isAuthenticated()">
                             <form th:action="@{/logout}" method="post">
-                                <button type="submit" class="uk-button uk-button-default">
+                                <button type="submit" class="uk-button uk-button-link">
                                     <span uk-icon="icon: sign-out"></span>
                                     <span th:text="#{button.logout}"></span>
                                 </button>
                             </form>
+                        </div>
+                    </div>
+                    <div class="uk-navbar-right uk-hidden@m">
+                        <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon uk-toggle
+                            href="#header-toggle"></a>
+                        <div id="header-toggle" uk-offcanvas="flip: true">
+                            <div class="uk-offcanvas-bar">
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                                <ul class="uk-nav uk-nav-primary uk-nav-large">
+                                    <li sec:authorize="isAuthenticated()">
+                                        <form th:action="@{/logout}" method="post">
+                                            <button type="submit" class="uk-button uk-button-link">
+                                                <span uk-icon="icon: sign-out"></span>
+                                                <span th:text="#{button.logout}"></span>
+                                            </button>
+                                        </form>
+                                    </li>
+                                    <li class="uk-nav-divider" sec:authorize="isAuthenticated()"></li>
+                                    <li>
+                                        <a class="uk-link-reset" href="https://github.com/sh1Nome/me-to-do"
+                                            uk-icon="icon: github" target="_blank"></a>
+                                    </li>
+                                    <li>
+                                        <a class="uk-link-reset" href="https://x.com/sh1_No_me" uk-icon="icon: x"
+                                            target="_blank"></a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
