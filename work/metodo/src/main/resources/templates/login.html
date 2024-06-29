@@ -18,9 +18,9 @@
             </div>
             <form th:action="@{/login}" method="post">
                 <label for="username" th:text="#{label.username}"></label>
-                <input type="text" id="username" name="username" />
+                <input type="text" id="username" name="username" class="uk-input" />
                 <label for="password" th:text="#{label.password}"></label>
-                <input type="password" id="password" name="password" />
+                <input type="password" id="password" name="password" class="uk-input" />
                 <button type="submit" th:text="#{button.login}"></button>
             </form>
         </div>
