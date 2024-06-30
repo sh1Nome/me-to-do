@@ -16,59 +16,63 @@
                     <div th:text="#{failure.login}"></div>
                 </div>
             </div>
-            <!-- レスポンシブPCここから -->
-            <form th:action="@{/login}" method="post"
-                class="uk-form-stacked uk-width-xlarge uk-align-center uk-visible@m">
-                <div class="uk-margin uk-child-width-expand">
-                    <label for="username" th:text="#{label.username}" class="uk-form-label"></label>
-                    <div class="uk-form-controls uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: user"></span>
-                        <input type="text" id="username" name="username" class="uk-input" />
-                    </div>
+            <div id="responsive-login-form">
+                <div class="uk-align-center" :class="[isMobile ? mobileStyle : pcStyle]">
+                    <form th:action="@{/login}" method="post" class="uk-form-stacked">
+                        <div class="uk-margin uk-child-width-expand">
+                            <label for="username" th:text="#{label.username}" class="uk-form-label"></label>
+                            <div class="uk-form-controls uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input type="text" id="username" name="username" class="uk-input" />
+                            </div>
+                        </div>
+                        <div class="uk-margin uk-child-width-expand">
+                            <label for="password" th:text="#{label.password}" class="uk-form-label"></label>
+                            <div class="uk-form-controls uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input type="password" id="password" name="password" class="uk-input" />
+                            </div>
+                        </div>
+                        <div class="uk-margin uk-child-width-expand">
+                            <div uk-form-custom>
+                                <button type="submit" class="uk-button uk-button-primary uk-align-right">
+                                    <span uk-icon="icon: sign-in"></span>
+                                    <span th:text="#{button.login}"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="uk-margin uk-child-width-expand">
-                    <label for="password" th:text="#{label.password}" class="uk-form-label"></label>
-                    <div class="uk-form-controls uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                        <input type="password" id="password" name="password" class="uk-input" />
-                    </div>
-                </div>
-                <div class="uk-margin uk-child-width-expand">
-                    <div uk-form-custom>
-                        <button type="submit" class="uk-button uk-button-primary uk-align-right">
-                            <span uk-icon="icon: sign-in"></span>
-                            <span th:text="#{button.login}"></span>
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <!-- レスポンシブPCここまで -->
-            <!-- レスポンシブモバイルここから -->
-            <form th:action="@{/login}" method="post" class="uk-form-stacked uk-width-5-6 uk-align-center uk-hidden@m">
-                <div class="uk-margin uk-child-width-expand">
-                    <label for="username" th:text="#{label.username}" class="uk-form-label"></label>
-                    <div class="uk-form-controls uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: user"></span>
-                        <input type="text" id="username" name="username" class="uk-input" />
-                    </div>
-                </div>
-                <div class="uk-margin uk-child-width-expand">
-                    <label for="password" th:text="#{label.password}" class="uk-form-label"></label>
-                    <div class="uk-form-controls uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                        <input type="password" id="password" name="password" class="uk-input" />
-                    </div>
-                </div>
-                <div class="uk-margin uk-child-width-expand">
-                    <div uk-form-custom>
-                        <button type="submit" class="uk-button uk-button-primary uk-align-right">
-                            <span uk-icon="icon: sign-in"></span>
-                            <span th:text="#{button.login}"></span>
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <!-- レスポンシブモバイルここまで -->
+            </div>
+            <script>
+                // レスポンシブ対応
+                createApp({
+                    data() {
+                        return {
+                            mql: window.matchMedia("(min-width: " + responsiveBreakPoint + "px)"),
+                            isMobile: false,
+                            pcStyle: 'uk-width-xlarge',
+                            mobileStyle: 'uk-width-5-6'
+                        }
+                    },
+                    methods: {
+                        reStyle(e) {
+                            if (e.matches) {
+                                this.isMobile = false;
+                            } else {
+                                this.isMobile = true;
+                            }
+                        }
+                    },
+                    mounted: function () {
+                        this.mql.addEventListener("change", this.reStyle);
+                        this.reStyle(this.mql);
+                    },
+                    unmounted: function () {
+                        this.mql.removeEventListener("change", this.reStyle);
+                    }
+                }).mount('#responsive-login-form');
+            </script>
         </div>
     </section>
 </body>
