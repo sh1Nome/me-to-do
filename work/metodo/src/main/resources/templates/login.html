@@ -16,13 +16,59 @@
                     <div th:text="#{failure.login}"></div>
                 </div>
             </div>
-            <form th:action="@{/login}" method="post">
-                <label for="username" th:text="#{label.username}"></label>
-                <input type="text" id="username" name="username" class="uk-input" />
-                <label for="password" th:text="#{label.password}"></label>
-                <input type="password" id="password" name="password" class="uk-input" />
-                <button type="submit" th:text="#{button.login}"></button>
+            <!-- レスポンシブPCここから -->
+            <form th:action="@{/login}" method="post"
+                class="uk-form-stacked uk-width-xlarge uk-align-center uk-visible@m">
+                <div class="uk-margin uk-child-width-expand">
+                    <label for="username" th:text="#{label.username}" class="uk-form-label"></label>
+                    <div class="uk-form-controls uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                        <input type="text" id="username" name="username" class="uk-input" />
+                    </div>
+                </div>
+                <div class="uk-margin uk-child-width-expand">
+                    <label for="password" th:text="#{label.password}" class="uk-form-label"></label>
+                    <div class="uk-form-controls uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                        <input type="password" id="password" name="password" class="uk-input" />
+                    </div>
+                </div>
+                <div class="uk-margin uk-child-width-expand">
+                    <div uk-form-custom>
+                        <button type="submit" class="uk-button uk-button-primary uk-align-right">
+                            <span uk-icon="icon: sign-in"></span>
+                            <span th:text="#{button.login}"></span>
+                        </button>
+                    </div>
+                </div>
             </form>
+            <!-- レスポンシブPCここまで -->
+            <!-- レスポンシブモバイルここから -->
+            <form th:action="@{/login}" method="post" class="uk-form-stacked uk-width-5-6 uk-align-center uk-hidden@m">
+                <div class="uk-margin uk-child-width-expand">
+                    <label for="username" th:text="#{label.username}" class="uk-form-label"></label>
+                    <div class="uk-form-controls uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                        <input type="text" id="username" name="username" class="uk-input" />
+                    </div>
+                </div>
+                <div class="uk-margin uk-child-width-expand">
+                    <label for="password" th:text="#{label.password}" class="uk-form-label"></label>
+                    <div class="uk-form-controls uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                        <input type="password" id="password" name="password" class="uk-input" />
+                    </div>
+                </div>
+                <div class="uk-margin uk-child-width-expand">
+                    <div uk-form-custom>
+                        <button type="submit" class="uk-button uk-button-primary uk-align-right">
+                            <span uk-icon="icon: sign-in"></span>
+                            <span th:text="#{button.login}"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!-- レスポンシブモバイルここまで -->
         </div>
     </section>
 </body>
