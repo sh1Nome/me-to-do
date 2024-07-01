@@ -7,70 +7,88 @@
 
 <body>
     <section>
-        <div class="container">
-            <div id="message" class="has-text-centered">
-                <div th:if="${param.logout}" class="columns" :class="{ 'is-hidden': isHiddenLogout }">
-                    <div class="notification is-info column is-half is-offset-one-quarter">
-                        <button class="delete" @click="hiddenMessageLogout"></button>
-                        <div th:text="#{success.logout}"></div>
+        <div>
+            <div id="responsive-login-form">
+                <div class="uk-align-center" :class="isMobile ? 'uk-width-5-6' : 'uk-width-xlarge'">
+                    <!-- メッセージ -->
+                    <div class="uk-margin uk-child-width-expand">
+                        <div th:if="${param.logout}" uk-alert>
+                            <a href class="uk-alert-close" uk-close></a>
+                            <div th:text="#{success.logout}"></div>
+                        </div>
+                        <div th:if="${param.error}" class="uk-alert-warning" uk-alert>
+                            <a href class="uk-alert-close" uk-close></a>
+                            <div th:text="#{failure.login}"></div>
+                        </div>
                     </div>
-                </div>
-                <div th:if="${param.error}" class="columns" :class="{ 'is-hidden': isHiddenError }">
-                    <div class="notification is-danger column is-half is-offset-one-quarter">
-                        <button class="delete" @click="hiddenMessageError"></button>
-                        <div th:text="#{failure.login}"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
-                    <form th:action="@{/login}" method="post" class="box">
-                        <div class="field">
-                            <label for="username" th:text="#{label.username}" class="label"></label>
-                            <div class="control">
-                                <input type="text" id="username" name="username" class="input" />
+                    <!-- フォーム -->
+                    <form th:action="@{/login}" method="post" class="uk-form-stacked">
+                        <div class="uk-margin uk-child-width-expand">
+                            <label for="username" th:text="#{label.username}" class="uk-form-label"></label>
+                            <div class="uk-form-controls uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input type="text" id="username" name="username" class="uk-input" />
                             </div>
                         </div>
-                        <div class="field">
-                            <label for="password" th:text="#{label.password}" class="label"></label>
-                            <div class="control">
-                                <input type="password" id="password" name="password" class="input" />
+                        <div class="uk-margin uk-child-width-expand">
+                            <label for="password" th:text="#{label.password}" class="uk-form-label"></label>
+                            <div class="uk-form-controls uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input :type="isReveal ? 'text' : 'password'" id="password" name="password"
+                                    class="uk-input" />
+                                <button type="button" class="uk-form-icon uk-form-icon-flip"
+                                    :uk-icon="isReveal ? 'icon: eye-slash' : 'icon: eye'"
+                                    @click="switchReveal"></button>
                             </div>
                         </div>
-                        <div class="field">
-                            <div class="control">
-                                <div class="fixed-grid has-4-cols">
-                                    <div class="grid">
-                                        <div class="cell is-col-start-4 has-text-right">
-                                            <button type="submit" class="button is-primary"><span
-                                                    th:text="#{button.login}"></span></button>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="uk-margin uk-child-width-expand">
+                            <div uk-form-custom>
+                                <button type="submit" class="uk-button uk-button-primary uk-align-right">
+                                    <span uk-icon="icon: sign-in"></span>
+                                    <span th:text="#{button.login}"></span>
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
-        <script>
-            createApp({
-                data() {
-                    return {
-                        isHiddenLogout: false,
-                        isHiddenError: false
-                    }
-                },
-                methods: {
-                    hiddenMessageLogout() {
-                        this.isHiddenLogout = true;
+            <script>
+                createApp({
+                    data() {
+                        return {
+                            // レスポンシブ対応
+                            mql: window.matchMedia('(min-width: ' + responsiveBreakPoint + 'px)'),
+                            isMobile: false,
+                            // パスワード表示・非表示
+                            isReveal: false
+                        }
                     },
-                    hiddenMessageError() {
-                        this.isHiddenError = true;
+                    methods: {
+                        // レスポンシブ対応
+                        reStyle(e) {
+                            if (e.matches) {
+                                this.isMobile = false;
+                            } else {
+                                this.isMobile = true;
+                            }
+                        },
+                        // パスワード表示・非表示
+                        switchReveal() {
+                            this.isReveal = !this.isReveal
+                        }
+                    },
+                    mounted: function () {
+                        // レスポンシブ対応
+                        this.mql.addEventListener('change', this.reStyle);
+                        this.reStyle(this.mql);
+                    },
+                    unmounted: function () {
+                        // レスポンシブ対応
+                        this.mql.removeEventListener('change', this.reStyle);
                     }
-                }
-            }).mount('#message');
-        </script>
+                }).mount('#responsive-login-form');
+            </script>
+        </div>
     </section>
 </body>
 

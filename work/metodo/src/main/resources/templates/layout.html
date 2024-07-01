@@ -6,80 +6,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:replace="${title}"></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" th:href="@{/css/metodo.css}">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit-icons.min.js"></script>
+    <!-- Vue.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+        const responsiveBreakPoint = 960;
+    </script>
 </head>
 
 <body>
-    <script>
-        const { createApp } = Vue
-    </script>
-    <div class="block">
-        <header id="header">
-            <nav class="navbar is-primary">
-                <div class="navbar-brand">
-                    <div class="navbar-item">
-                        <h3 class="title is-3">
-                            <a th:href="@{/}">MeToDo</a>
-                        </h3>
+    <header class="uk-margin" uk-sticky>
+        <nav class="uk-navbar-container">
+            <div class="uk-container uk-container-expand">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-item uk-logo" th:text="#{label.header.logo}" th:href="@{/}"></a>
                     </div>
-                    <div class="navbar-burger" :class="{ 'is-active' : isActive }" @click="burgerToggle"
-                        sec:authorize="isAuthenticated()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div class="navbar-menu" :class="{ 'is-active' : isActive }" sec:authorize="isAuthenticated()">
-                    <div class="navbar-end">
-                        <div class="navbar-item">
+                    <!-- レスポンシブPCここから -->
+                    <div class="uk-navbar-right uk-visible@m">
+                        <a class="uk-navbar-item uk-link-reset" href="https://github.com/sh1Nome/me-to-do"
+                            uk-icon="icon: github" target="_blank"></a>
+                        <a class="uk-navbar-item uk-link-reset" href="https://x.com/sh1_No_me" uk-icon="icon: x"
+                            target="_blank"></a>
+                        <div class="uk-navbar-item" sec:authorize="isAuthenticated()">
                             <form th:action="@{/logout}" method="post">
-                                <button type="submit" class="button is-text" th:text="#{button.logout}"></button>
+                                <button type="submit" class="uk-button uk-button-link">
+                                    <span uk-icon="icon: sign-out"></span>
+                                    <span th:text="#{button.logout}"></span>
+                                </button>
                             </form>
                         </div>
                     </div>
-                </div>
-    </div>
-    </nav>
-    </header>
-    <script>
-        createApp({
-            data() {
-                return {
-                    isActive: false
-                }
-            },
-            methods: {
-                burgerToggle() {
-                    this.isActive = !this.isActive;
-                }
-            }
-        }).mount('#header');
-    </script>
-    </div>
-    <div class="block">
-        <div th:replace="${content}"></div>
-    </div>
-    <div class="block">
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <div class="block">
-                    <span th:text="#{label.footer.bysh1Nome}"></span>
-                </div>
-                <div class="block">
-                    <a href="https://x.com/sh1_No_me" target="_blank">
-                        <img th:src="@{/img/x/logo-black.png}" class="me-icon-20px" />
-                    </a>
-                    &nbsp;
-                    <a href="https://github.com/sh1Nome/me-to-do" target="_blank">
-                        <img th:src="@{/img/github/github-mark.svg}" class="me-icon-20px" />
-                    </a>
+                    <!-- レスポンシブPCここまで -->
+                    <!-- レスポンシブモバイルここから -->
+                    <div class="uk-navbar-right uk-hidden@m">
+                        <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon uk-toggle
+                            href="#header-toggle"></a>
+                        <div id="header-toggle" uk-offcanvas="flip: true">
+                            <div class="uk-offcanvas-bar">
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                                <ul class="uk-nav uk-nav-primary uk-nav-large">
+                                    <li sec:authorize="isAuthenticated()">
+                                        <form th:action="@{/logout}" method="post">
+                                            <button type="submit" class="uk-button uk-button-link">
+                                                <span uk-icon="icon: sign-out"></span>
+                                                <span th:text="#{button.logout}"></span>
+                                            </button>
+                                        </form>
+                                    </li>
+                                    <li class="uk-nav-divider" sec:authorize="isAuthenticated()"></li>
+                                    <li>
+                                        <a class="uk-link-reset" href="https://github.com/sh1Nome/me-to-do"
+                                            uk-icon="icon: github" target="_blank"></a>
+                                    </li>
+                                    <li>
+                                        <a class="uk-link-reset" href="https://x.com/sh1_No_me" uk-icon="icon: x"
+                                            target="_blank"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- レスポンシブモバイルここまで -->
                 </div>
             </div>
-        </footer>
-    </div>
+        </nav>
+    </header>
+    <div th:replace="${content}"></div>
 </body>
 
 </html>
