@@ -73,3 +73,17 @@
 |account_id|VARCHAR(60)|〇||
 |authority|VARCHAR(10)|〇||
 |update_date|TIMESTAMPTZ|〇||
+
+# 技術仕様
+* Docker
+* flyway
+* Gradle
+* lombok
+* PostgreSQL
+* Spring Boot 3.3.0
+* Spring Data JPA
+* Spring Security
+* thymeleaf
+* UIkit
+* VSCode
+* Vue.js
