@@ -50,6 +50,11 @@
                             </div>
                         </div>
                     </form>
+                    <!-- アカウント作成リンク -->
+                    <div>
+                        <a th:href="@{account_new}" th:text="#{link.account.new}"
+                            class="uk-link-muted uk-align-right"></a>
+                    </div>
                 </div>
             </div>
             <script>
@@ -88,7 +93,6 @@
                     }
                 }).mount('#responsive-login-form');
             </script>
-        </div>
     </section>
 </body>
 
