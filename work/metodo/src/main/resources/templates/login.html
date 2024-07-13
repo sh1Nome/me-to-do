@@ -21,25 +21,12 @@
                     </div>
                 </div>
                 <!-- フォーム -->
-                <div id="form">
-                    <form th:action="@{/login}" method="post" class="uk-form-stacked">
-                        <account-form th:label-username="#{label.username}" th:label-password="#{label.password}"
-                            th:button-login="#{button.login}"></account-form>
-                    </form>
-                </div>
+                <div th:replace="~{fragment/account_form :: account-form}"></div>
                 <!-- アカウント作成リンク -->
                 <div>
                     <a th:href="@{account_new}" th:text="#{link.account.new}" class="uk-link-muted uk-align-right"></a>
                 </div>
             </div>
-            <script type="module" th:inline="javascript">
-                import AccountForm from '[(@{/js/vue/component/AccountForm.js})]'
-                createApp({
-                    components: {
-                        AccountForm
-                    }
-                }).mount('#form');
-            </script>
     </section>
 </body>
 
