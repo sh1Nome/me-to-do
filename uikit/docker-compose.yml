@@ -4,4 +4,4 @@ services:
     build: .
     container_name: node
     volumes:
-      - './uikit-3.21.6/src/less:/work'
+      - './work:/work'

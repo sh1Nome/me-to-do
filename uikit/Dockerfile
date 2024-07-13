@@ -1,11 +1,19 @@
 FROM node:22-slim
 
-RUN mkdir /work
+RUN apt-get update \
+    && apt-get install -y wget \
+    && mkdir /uikit \
+    && mkdir /work \
+    && npm install less -g
 
-WORKDIR /work
+WORKDIR /uikit
 
-RUN npm install less -g
+RUN wget https://github.com/uikit/uikit/archive/refs/tags/v3.21.6.tar.gz \
+    && tar -xzvf v3.21.6.tar.gz \
+    && rm -rf v3.21.6.tar.gz
 
 STOPSIGNAL SIGKILL
 
-ENTRYPOINT ["lessc", "customized-uikit.less", "customized-uikit.css"]
+WORKDIR /work
+
+ENTRYPOINT ["sh", "./entrypoint.sh"]

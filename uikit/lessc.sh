@@ -11,6 +11,6 @@ done
 
 docker compose down --rmi local -v
 
-mv ./uikit-3.21.6/src/less/customized-uikit.css ../work/metodo/src/main/resources/static/css/uikit
-cp ./uikit-3.21.6/dist/js/uikit.min.js ../work/metodo/src/main/resources/static/js/uikit
-cp ./uikit-3.21.6/dist/js/uikit-icons.min.js ../work/metodo/src/main/resources/static/js/uikit
+mv -f ./work/customized-uikit.css ../work/metodo/src/main/resources/static/css/uikit
+mv -f ./work/uikit.min.js ../work/metodo/src/main/resources/static/js/uikit
+mv -f ./work/uikit-icons.min.js ../work/metodo/src/main/resources/static/js/uikit
