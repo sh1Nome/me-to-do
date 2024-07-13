@@ -8,7 +8,7 @@ public class AccountController {
 
     @GetMapping("account_new")
     public String getAccountEdit() {
-        return "account_edit";
+        return "account_new";
     }
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragment/layout :: layout(~{::title}, ~{::section})}">
 
 <head>
     <title th:text="#{label.title.login}"></title>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <!-- フォーム -->
-                <div th:replace="~{fragment/account_form :: account-form}"></div>
+                <div th:replace="~{fragment/account_form :: account-form (@{/login}, #{button.login})}"></div>
                 <!-- アカウント作成リンク -->
                 <div>
                     <a th:href="@{account_new}" th:text="#{link.account.new}" class="uk-link-muted uk-align-right"></a>
