@@ -1,6 +1,22 @@
 @import "./uikit.theme.less";
 
-/* edgeのパスワード表示・非表示アイコン削除 */
+// edgeのパスワード表示・非表示アイコン削除
 ::-ms-reveal {
     display: none;
+}
+
+// レスポンシブ対応用変数
+// UIkitのvisibility.lessからコピペ
+@mobile: ~"(max-width: @{breakpoint-small-max})";
+@pc: ~"(min-width: @{breakpoint-medium})";
+
+// レスポンシブ余白持たせ
+.me-width-5-6\@mxlarge {
+    @media @mobile {
+        .uk-width-5-6
+    }
+
+    @media @pc {
+        .uk-width-xlarge
+    }
 }
