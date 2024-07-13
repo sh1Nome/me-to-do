@@ -1,5 +1,7 @@
 FROM node:22-slim
 
+ARG UIKIT_VERSION
+
 RUN apt-get update \
     && apt-get install -y wget \
     && mkdir /uikit \
@@ -8,12 +10,14 @@ RUN apt-get update \
 
 WORKDIR /uikit
 
-RUN wget https://github.com/uikit/uikit/archive/refs/tags/v3.21.6.tar.gz \
-    && tar -xzvf v3.21.6.tar.gz \
-    && rm -rf v3.21.6.tar.gz
+RUN wget https://github.com/uikit/uikit/archive/refs/tags/v${UIKIT_VERSION}.tar.gz \
+    && tar -xzvf v${UIKIT_VERSION}.tar.gz \
+    && rm -rf v${UIKIT_VERSION}.tar.gz
 
 STOPSIGNAL SIGKILL
 
 WORKDIR /work
+
+ENV UIKIT_VERSION=${UIKIT_VERSION}
 
 ENTRYPOINT ["sh", "./entrypoint.sh"]
