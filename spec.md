@@ -118,6 +118,7 @@
 * Docker
 * flyway
 * Gradle
+* LESS
 * lombok
 * PostgreSQL
 * Spring Boot 3.3.0
