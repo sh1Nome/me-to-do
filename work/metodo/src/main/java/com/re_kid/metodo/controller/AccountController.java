@@ -9,9 +9,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.re_kid.metodo.form.AccountForm;
+import com.re_kid.metodo.service.AccountService;
 
 @Controller
 public class AccountController {
+
+    private final AccountService accountService;
+
+    public AccountController(AccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @ModelAttribute
     public AccountForm setUpAccountForm() {
@@ -28,6 +35,9 @@ public class AccountController {
         if (result.hasErrors()) {
             return "account_new";
         }
+
+        accountService.registerAccount(form.getUsername(), form.getPassword());
+
         return "redirect:/";
     }
 

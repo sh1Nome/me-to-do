@@ -9,8 +9,6 @@ public class MetodoApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(MetodoApplication.class, args);
-		MetodoApplicationService metodoApplicationService = context.getBean(MetodoApplicationService.class);
-		metodoApplicationService.initMetodoUser();
 	}
 
 }
