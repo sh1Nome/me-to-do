@@ -41,8 +41,12 @@ public class AccountController {
     public String postAccountNew(@Validated AccountForm form, BindingResult result,
             RedirectAttributes redirectAttributes, Locale locale,
             UriComponentsBuilder ucb) {
+        String loginPage = "redirect:" + ucb.path("/login").build().toUri().toString();
+
         if (result.hasErrors()) {
-            return "account_new";
+            redirectAttributes.addFlashAttribute("message",
+                    messageSource.getMessage("failure.account.register", null, locale));
+            return loginPage;
         }
 
         accountService.registerAccount(form.getUsername(), form.getPassword());
@@ -50,7 +54,7 @@ public class AccountController {
         redirectAttributes.addFlashAttribute("message",
                 messageSource.getMessage("success.account.register", null, locale));
 
-        return "redirect:" + ucb.path("/login").build().toUri().toString();
+        return loginPage;
     }
 
 }

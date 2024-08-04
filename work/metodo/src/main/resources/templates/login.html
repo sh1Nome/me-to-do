@@ -15,7 +15,7 @@
                         <a href class="uk-alert-close" uk-close></a>
                         <div th:text="#{success.logout}"></div>
                     </div>
-                    <div th:if="${message != ''}" uk-alert>
+                    <div th:if="${message != null}" uk-alert>
                         <a href class="uk-alert-close" uk-close></a>
                         <div th:text="${message}"></div>
                     </div>
